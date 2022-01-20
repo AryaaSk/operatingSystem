@@ -1,0 +1,14 @@
+<div class="window" [ngStyle] = "{'height.px': this.dataservice.defaultHeight, 'width.px': this.dataservice.defaultWidth }" cdkDrag id="{{windowId}}">
+    <div class="header" style="display: grid; grid-template-columns: auto 40px" cdkDragHandle>
+        <div><h3 style="margin: 0; margin-left: 5px;">{{appType}}</h3></div>
+        <div style="display: grid; place-items: center;">
+            <input type="button" value="X" style="margin: 0;" (click)="closeWindow()">
+        </div>
+    </div>
+    <div style="height: auto;">
+        <!-- Now load in the specific app which is needed -->
+        <app-notepad *ngIf="appType=='notepad'" windowId={{windowId}} data={{data}}></app-notepad>
+        <app-calculator *ngIf="appType=='calculator'" windowId={{windowId}} data={{data}}></app-calculator>
+        <app-file-explorer *ngIf="appType=='file-explorer'" windowId={{windowId}} data={{data}}></app-file-explorer>
+    </div>
+</div>

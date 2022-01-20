@@ -1,0 +1,11 @@
+<div class="windowContainer">
+    <div class="windowContent windowOptionsGrid">
+        <div>
+            <span *ngIf="filePath != undefined"><input type="button" value="Save" (click)="save()"> <input type="button" value="New" (click)="newFile()"></span>
+            <span *ngIf="filePath == undefined"><input type="text" placeholder="New File Name" [(ngModel)]="newFileName" style="width: calc(100% - 60px)"> <input type="button" value="Create" style="margin: 0; margin-left: 3px;" (click)="createFile()"></span>
+        </div>
+        <div *ngIf="filePath != undefined">
+            <Textarea class="textarea" placeholder="Type something..." [(ngModel)]="text" ngDefaultControl></Textarea>
+        </div>
+    </div>
+</div>

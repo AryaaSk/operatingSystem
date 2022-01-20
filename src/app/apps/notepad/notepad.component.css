@@ -1,0 +1,14 @@
+.textarea
+{
+    width: 100%;
+    height: calc(100% - 20px);
+
+    border: none; 
+    resize: none;
+
+    font-size: 14px;
+    background-color: var(--windowBackgroundColour);
+}
+.textarea:focus {
+    outline: none;
+}

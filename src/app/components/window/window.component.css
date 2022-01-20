@@ -1,0 +1,21 @@
+.window
+{
+    position: fixed;
+    resize: both;
+    overflow: auto;
+
+    display: grid;
+    grid-template-rows: 25px auto;
+
+    background-color: var(--windowBackgroundColour);
+    border: 0.5px solid lightgray;
+}
+.header
+{
+    cursor: move;
+    height: 100%;
+    width: 100%;
+
+    background-color: lightskyblue;
+}
+  

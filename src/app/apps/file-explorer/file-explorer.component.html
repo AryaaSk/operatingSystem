@@ -1,0 +1,15 @@
+<div class="windowContainer">
+    <div class="windowContent windowOptionsGrid">
+        <div>
+            <input type="button" value="<-" (click)="goBack()" *ngIf="this.pathLevel != 1">
+            <input type="button" value="New Folder" (click)="createNewFolder()">
+        </div>
+        <div>
+            <!-- Show all items for the current path level -->
+            <div *ngFor="let data of this.currentItems">
+                <input type="button" value="{{data[data.length - 1]}}" (click)="selectedData(data)">
+            </div>
+        </div>
+        
+    </div>
+</div>
