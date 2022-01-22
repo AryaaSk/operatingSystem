@@ -8,7 +8,10 @@ export class DataService {
   defaultHeight = 400;
   defaultWidth = 700;
 
-  apps: {name: string, windowId: string, data: string}[] = []; //data is a dictionary but we need to convert it to json so it doesnt get lost in transit
+  applications: {name: string, icon: string, data: string}[] = [{name: "file-explorer", icon: "/assets/AppIcons/file-explorer.png", data: JSON.stringify({})}, {name: "notepad", icon: "/assets/AppIcons/notepad.png", data: JSON.stringify({})}, {name: "calculator", icon: "/assets/AppIcons/calculator.png", data: JSON.stringify({"width": 300, "height" : 500})}];
+  //array of all apps available, their icon and the data which is used to initilize the app
+
+  apps: {name: string, windowId: string, data: string}[] = []; //array of all apps open at the moment
   openWithDirectory: {[k: string]: any} = {"txt" : "notepad"}; //tells the os how to open certain files, such as notepad for .txt files
 
   files: {[k: string]: any} = {"Root/Documents/data.txt": "This is a sample text file", "Root/Documents/file.txt" : "This is the file I just created"} //a dictionary of data files with their paths and their actual data (need to use string for paths as you cant have a path array in a dictionary)
@@ -32,9 +35,8 @@ export class DataService {
   }
   loadApps()
   {
-    this.apps.push({name: "file-explorer", windowId: this.generateID(), data: JSON.stringify({})});
-    //this.apps.push({name: "notepad", windowId: this.generateID(), data: JSON.stringify({"filePath" : ["Root", "Documents", "data.txt"]})});
-    this.apps.push({name: "calculator", windowId: this.generateID(), data: JSON.stringify({"width": 300, "height" : 500})})
+    //can load apps on startup here
+    //this.apps.push({name: "file-explorer", windowId: this.generateID(), data: JSON.stringify({})});
   }
 
   generateID()

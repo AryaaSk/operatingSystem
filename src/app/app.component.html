@@ -1,5 +1,15 @@
-<div style="height: 100%; width: 100%">
-    <div *ngFor="let app of dataservice.apps;">
-        <app-window appType={{app.name}} windowId={{app.windowId}} data={{app.data}}></app-window>
+<div class="content">
+    <div style="height: 100%; width: 100%;" class="desktop">
+        <div *ngFor="let app of dataservice.apps;">
+            <app-window appType={{app.name}} windowId={{app.windowId}} data={{app.data}}></app-window>
+        </div>
+    </div>
+    <div class="taskbar">
+        <div class="appIcon">
+            <img src="/assets/AppIcons/search.png" class="appIconImage">
+        </div>
+        <div class="appIcon" *ngFor="let application of dataservice.applications" (click)="clickedApp(application.name, application.data)">
+            <img src={{application.icon}} class="appIconImage">
+        </div>
     </div>
 </div>

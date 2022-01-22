@@ -1,0 +1,44 @@
+.content
+{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: auto 40px;
+}
+.desktop
+{
+    background-image: url('/assets/DesktopBackground.png'); 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; 
+}
+.taskbar
+{
+    padding-left: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+
+    background-color: rgb(210, 210, 210, 0.5);
+}
+.appIcon
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+
+    display: grid;
+    place-content: center;
+}
+.appIcon:active
+{
+    background-color: rgb(210, 210, 210);
+}
+.appIconImage
+{
+    height: auto; 
+    width: 70%;
+    border-radius: 4px;
+
+    object-fit: contain; 
+    transform: translateX(7px);
+}

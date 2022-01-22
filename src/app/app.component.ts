@@ -11,6 +11,12 @@ export class AppComponent {
 
   title = 'operatingSystem';
 
+  clickedApp(appType: string, appData: string)
+  {
+    //just add the appType with no data
+    this.dataservice.apps.push({name: appType, windowId: this.dataservice.generateID(), data: appData});
+  }
+
   ngOnInit()
   {
     this.dataservice.loadApps();
