@@ -34,8 +34,7 @@ export class DataService {
   {
     this.apps.push({name: "file-explorer", windowId: this.generateID(), data: JSON.stringify({})});
     //this.apps.push({name: "notepad", windowId: this.generateID(), data: JSON.stringify({"filePath" : ["Root", "Documents", "data.txt"]})});
-    //this.apps.push({name: "notepad", windowId: this.generateID(), data: JSON.stringify({"filePath" : ["Root", "Documents", "file.txt"]})});
-    //this.apps.push({name: "notepad", windowId: this.generateID(), data: JSON.stringify({})});
+    this.apps.push({name: "calculator", windowId: this.generateID(), data: JSON.stringify({"width": 300, "height" : 500})})
   }
 
   generateID()

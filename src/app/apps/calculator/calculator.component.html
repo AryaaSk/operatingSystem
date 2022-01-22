@@ -1,1 +1,35 @@
-This is a calulator app
+<div class="windowContainer">
+    <div class="windowContent">
+        <div class="calcGrid">
+            <div style="text-align: right; grid-column: 1 / span 2;">
+                <!-- Text display -->
+                <span style="font-size: 35px;">{{currentNumber}}</span>
+            </div>
+            <div class="controlButtons" style="grid-column: 1 / span 2;">
+                <div></div>
+                <div></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="C" class="controlButton" (click)="C()"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="AC" class="controlButton" (click)="AC()"></div>
+            </div>
+            <div class="calcButtons">
+                <div style="display: grid; place-content: center;"><input type="button" value="1" class="calcButton" (click)="addNum(1)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="2" class="calcButton" (click)="addNum(2)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="3" class="calcButton" (click)="addNum(3)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="4" class="calcButton" (click)="addNum(4)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="5" class="calcButton" (click)="addNum(5)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="6" class="calcButton" (click)="addNum(6)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="7" class="calcButton" (click)="addNum(7)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="8" class="calcButton" (click)="addNum(8)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="9" class="calcButton" (click)="addNum(9)"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="0" class="calcButton" (click)="addNum(0)"></div>
+                <div style="display: grid; place-content: center; grid-column: 2 / span 2;"><input type="button" value="=" class="calcButton" style="width: 120px;" (click)="equal()"></div>
+            </div>
+            <div class="operatorButtons">
+                <div style="display: grid; place-content: center;"><input type="button" value="+" class="calcButton" (click)="addOperator('+')"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="-" class="calcButton" (click)="addOperator('-')"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="*" class="calcButton" (click)="addOperator('*')"></div>
+                <div style="display: grid; place-content: center;"><input type="button" value="/" class="calcButton" (click)="addOperator('/')"></div>
+            </div>
+        </div>
+    </div>
+</div>
