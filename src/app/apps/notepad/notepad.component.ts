@@ -18,12 +18,11 @@ export class NotepadComponent implements OnInit {
 
   save()
   {
-    //get filePath from data
-    const filePath = JSON.parse(this.data)["filePath"];
-
     //save the data to the main files
-    this.dataservice.files[filePath] = this.text;
+    this.dataservice.files[this.filePath!] = this.text;
     this.dataservice.saveFiles()
+
+    console.log(this.dataservice.files)
   }
   newFile()
   {
@@ -64,7 +63,7 @@ export class NotepadComponent implements OnInit {
     this.dataservice.filePaths.push(pathArray) //dataservice.filePaths still uses old paths structure
     this.dataservice.saveFiles();
 
-    this.data = JSON.stringify({"filePath" : this.filePath});
+    this.data = JSON.stringify({"filePath" : pathArray}); //the data needs to be in the array form
     this.initialize();
   }
 

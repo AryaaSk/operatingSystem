@@ -23,7 +23,7 @@ export class WindowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.height = this.dataservice.defaultHeight;
+    this.height = this.dataservice.defaultHeight; //check if the window data contains a width or height, if not then just use the default height and width
     this.width = this.dataservice.defaultWidth;
 
     const dataParsed = JSON.parse(this.data)
