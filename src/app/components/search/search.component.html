@@ -1,0 +1,5 @@
+<form class="search" id="search" (clickout)="null" cdkDrag>
+    <div style="display: flex; align-items: center;"><input type="text" placeholder="Search" name="searchText" class="searchTextfield" [(ngModel)]="searchText" (ngModelChange)="getSuggestion()" ></div>
+    <div style="display: flex; align-items: center;"><h4 class="suggestionText">{{suggestion.name}}</h4></div>
+    <div style="display: flex; align-items: center;"><input type="submit" value="Go" (click)="search()" style="margin: 0;"></div>
+</form>

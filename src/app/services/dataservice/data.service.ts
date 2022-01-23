@@ -7,6 +7,7 @@ export class DataService {
 
   defaultHeight = 400;
   defaultWidth = 700;
+  searchOpen = false;
 
   applications: {name: string, icon: string, data: string}[] = [{name: "file-explorer", icon: "/assets/AppIcons/file-explorer.png", data: JSON.stringify({})}, {name: "notepad", icon: "/assets/AppIcons/notepad.png", data: JSON.stringify({})}, {name: "calculator", icon: "/assets/AppIcons/calculator.png", data: JSON.stringify({"width": 300, "height" : 500})}];
   //array of all apps available, their icon and the data which is used to initilize the app

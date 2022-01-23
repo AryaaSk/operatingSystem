@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="taskbar">
-        <div class="appIcon">
+        <div class="appIcon" (click)="showSearch()">
             <img src="/assets/AppIcons/search.png" class="appIconImage">
         </div>
         <div class="appIcon" *ngFor="let application of dataservice.applications" (click)="clickedApp(application.name, application.data)">
@@ -13,3 +13,5 @@
         </div>
     </div>
 </div>
+
+<app-search></app-search>

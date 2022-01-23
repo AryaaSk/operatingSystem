@@ -9,6 +9,7 @@ import { WindowComponent } from './components/window/window.component';
 import { NotepadComponent } from './apps/notepad/notepad.component';
 import { CalculatorComponent } from './apps/calculator/calculator.component';
 import { FileExplorerComponent } from './apps/file-explorer/file-explorer.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FileExplorerComponent } from './apps/file-explorer/file-explorer.compon
     WindowComponent,
     NotepadComponent,
     CalculatorComponent,
-    FileExplorerComponent
+    FileExplorerComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
