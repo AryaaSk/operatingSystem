@@ -9,6 +9,7 @@
             <!-- Show all items for the current path level -->
             <div *ngFor="let data of this.currentItems">
                 <input type="button" value="{{data[data.length - 1]}}" (click)="selectedData(data)">
+                <input type="button" value="🗑" (click)="deletePaths(data)">
             </div>
         </div>
         

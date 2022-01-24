@@ -1,8 +1,6 @@
 .window
 {
     position: fixed;
-    top: 10px;
-    left: 10px;
     
     resize: both;
     overflow: auto;

@@ -21,8 +21,6 @@ export class NotepadComponent implements OnInit {
     //save the data to the main files
     this.dataservice.files[this.filePath!] = this.text;
     this.dataservice.saveFiles()
-
-    console.log(this.dataservice.files)
   }
   newFile()
   {

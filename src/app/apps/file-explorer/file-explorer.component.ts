@@ -57,6 +57,30 @@ export class FileExplorerComponent implements OnInit {
       this.getCurrentData();
     }
   }
+  deletePaths(path: string[])
+  {
+    //we need to delete any path which contains the given path in dataservice.filePaths, and also reset them in dataservice.files
+    var i = 0;
+    while (i != this.dataservice.filePaths.length)
+    {
+      //check if the current filePath is equal to or greater than the given path length
+      if (this.dataservice.filePaths[i].length >= path.length)
+      {
+        if (String(this.dataservice.filePaths[i].slice(0, path.length)) == String(path)) //need to use String to compare the 2 for some reason
+        { 
+          const filePath = this.dataservice.convertArrayToPath(this.dataservice.filePaths[i]);
+          delete this.dataservice.files[filePath]
+
+          this.dataservice.filePaths.splice(i, 1); 
+        }
+        else
+        { i += 1; }
+      }
+      else
+      { i += 1; }
+    }
+    this.getCurrentData();
+  }
   goBack()
   {
     //go back one level

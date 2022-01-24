@@ -19,6 +19,18 @@ export class WindowComponent implements OnInit {
 
   closeWindow()
   {
+    //delete item from dataservice.apps, not working right now but will need to fix in the future
+    /*
+    var i = 0;
+    while (i != this.dataservice.apps.length)
+    {
+      if (this.dataservice.apps[i].windowId = this.windowId)
+      { 
+        this.dataservice.apps.splice(i, 1); break 
+      }
+      i += 1;
+    }*/
+    
     document.getElementById(this.windowId)!.remove();
   }
 
@@ -47,6 +59,13 @@ export class WindowComponent implements OnInit {
     { document.getElementById(this.windowId)!.style.resize = "vertical"; }
     if (height != null && width != null)
     { document.getElementById(this.windowId)!.style.resize = "none"; }
+
+
+    //also set the index so windows don't stack on top of each other
+    //inset = this.dataservice.apps.length * 10; //this doesnt work right now since the apps do not get deleted from the dataservice.apps
+    const inset = document.getElementsByClassName("window").length * 10;
+    document.getElementById(this.windowId)!.style.top = inset + "px";
+    document.getElementById(this.windowId)!.style.left = inset + "px";
   }
 
 }

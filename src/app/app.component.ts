@@ -21,6 +21,7 @@ export class AppComponent {
     if (this.dataservice.searchOpen != true) //can't open again
     {
       document.getElementById("search")!.style.visibility = "visible"
+      document.getElementById("searchTextfield")!.focus();
       setTimeout( () => { this.dataservice.searchOpen = true; }, 10); //10 milliseconds is just the tiny delay so that it doesnt close as soon as it opens
     }
   }
