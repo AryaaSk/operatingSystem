@@ -2,12 +2,25 @@ How to add new app:
 1. Create a new component in the folder src/app/apps (this is where you write all your code for your app), and add the below code in the [appName].component.ts:
     @Input() windowId: string = "";
     @Input() data: string = "";
+    
    Add the below code (makes sure the window resizer is always visible) in [appName].component.html:
     <div class="windowContainer">
         <div class="windowContent">
+            <!-- Main HTML goes here -->
         </div>
     </div>
-    (Optional): If you are planning to use a header bar to hold buttons such as "File" or "New" then change <div class="windowContent"> to <div class="windowContent windowOptionsGrid">, and then just add in buttons without a <br> tag inbetween
+
+   (Optional): If you are planning to use a header bar to hold buttons such as "File" or "New" then use this structure instead:
+    <div class="windowContainer">
+        <div class="windowContent windowOptionsGrid">
+            <div>
+                <!-- Header buttons go here (use <input type="button"> and don't put a <br> tag in between them) -->
+            </div>
+            <div>
+                <!-- Main HTML goes here -->
+            </div>
+        </div>
+    </div>
 
 2. Add the app icon in the src/assets/AppIcons folder
 3. Add the app in the applications variable in dataserivce.ts, this should contain the app name, the app icon and the default data needed to start the app
