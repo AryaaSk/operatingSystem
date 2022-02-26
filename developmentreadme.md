@@ -3,7 +3,11 @@
 
 
 # How to add new app:
-1. Create a new component in the folder src/app/apps (this is where you write all your code for your app), and add the below code in the [appName].component.ts:
+1. Create a new component in the folder src/app/apps (this is where you write all your code for your app) with this command:
+```
+ng generate component apps/[appName]
+
+2. Add the below code in the [appName].component.ts:
 ```
 @Input() windowId: string = "";
 @Input() data: string = "";
@@ -31,10 +35,10 @@ Add the below code (makes sure the window resizer is always visible) in [appName
     </div>
 </div>
 ```
-2. Add the app icon in the src/assets/AppIcons folder
-3. Add the app in the applications variable in dataserivce.ts, this should contain the app name, the app icon and the default data needed to start the app
+3. Add the app icon in the src/assets/AppIcons folder
+4. Add the app in the applications variable in dataserivce.ts, this should contain the app name, the app icon and the default data needed to start the app
     - If you are adding your app to open a specific file format, then add the app in the openWithDirectory variable in dataservice.ts, with the app name and extension which it opens (read the Data and File Paths sections to understand better how to read and write data).
-4. In the window.component.html add:
+5. In the window.component.html add:
 ```
 <app*[appName] *ngIf="appType=='[appName]'" windowId={{windowId}} data={{data}}></app*[appName]>, and replace [appName] with what your app component name
 ```
