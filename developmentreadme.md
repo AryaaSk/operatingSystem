@@ -47,9 +47,11 @@ Add the below code (makes sure the window resizer is always visible) in [appName
 
 ## File Paths:
 - The filePaths variable contains every file path to every folder/file in the system, in the format string[].
-1. When you open a file into an application, you will be given the files data in the form of string[], you can access the current app's data by using:
+- This is just used in the File Explorer to look through and open files.
+
+1. When you open a file into an application (from file explorer), you will be given the files data in the form of string[], you can access the current app's data by using:
 ```
-const dataParsed = JSON.parse(this.data);
+const dataParsed = JSON.parse(this.data); //this.data is from the @Input() data: string = ""; you should have created when creating your app
 const filePath = dataParsed["filePath"]; //this will be in form of string[];
 ```
 2. Then to convert it to a string use:
