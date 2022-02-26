@@ -6,6 +6,7 @@
 1. Create a new component in the folder src/app/apps (this is where you write all your code for your app) with this command:
 ```
 ng generate component apps/[appName]
+```
 
 2. Add the below code in the [appName].component.ts:
 ```
