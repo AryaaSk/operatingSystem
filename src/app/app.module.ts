@@ -10,6 +10,7 @@ import { NotepadComponent } from './apps/notepad/notepad.component';
 import { CalculatorComponent } from './apps/calculator/calculator.component';
 import { FileExplorerComponent } from './apps/file-explorer/file-explorer.component';
 import { SearchComponent } from './components/search/search.component';
+import { Connect4Component } from './apps/connect4/connect4.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchComponent } from './components/search/search.component';
     NotepadComponent,
     CalculatorComponent,
     FileExplorerComponent,
-    SearchComponent
+    SearchComponent,
+    Connect4Component
   ],
   imports: [
     BrowserModule,

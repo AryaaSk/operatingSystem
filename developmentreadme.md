@@ -18,7 +18,7 @@ Add the below code (makes sure the window resizer is always visible) in [appName
 ```
 <div class="windowContainer">
     <div class="windowContent">
-        <!** Main HTML goes here **>
+        <!-- Main HTML goes here -->
     </div>
 </div>
 ```
@@ -28,10 +28,10 @@ Add the below code (makes sure the window resizer is always visible) in [appName
 <div class="windowContainer">
     <div class="windowContent windowOptionsGrid">
         <div>
-            <!** Header buttons go here (use <input type="button"> and don't put a <br> tag in between them) **>
+            <!-- Header buttons go here (use <input type="button"> and don't put a <br> tag in between them) -->
         </div>
         <div>
-            <!** Main HTML goes here **>
+            <!-- Main HTML goes here -->
         </div>
     </div>
 </div>
@@ -41,7 +41,7 @@ Add the below code (makes sure the window resizer is always visible) in [appName
     - If you are adding your app to open a specific file format, then add the app in the openWithDirectory variable in dataservice.ts, with the app name and extension which it opens (read the Data and File Paths sections to understand better how to read and write data).
 5. In the window.component.html add:
 ```
-<app*[appName] *ngIf="appType=='[appName]'" windowId={{windowId}} data={{data}}></app*[appName]>, and replace [appName] with what your app component name
+<app-[appName] *ngIf="appType=='[appName]'" windowId={{windowId}} data={{data}}></app-[appName]>, and replace [appName] with what your app component name
 ```
 
 ## Data:
