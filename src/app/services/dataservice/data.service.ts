@@ -9,11 +9,11 @@ export class DataService {
   defaultWidth = 700;
   searchOpen = false;
 
-  applications: {name: string, icon: string, data: string}[] = [{name: "file-explorer", icon: "/assets/AppIcons/file-explorer.png", data: JSON.stringify({})}, {name: "notepad", icon: "/assets/AppIcons/notepad.png", data: JSON.stringify({})}, {name: "calculator", icon: "/assets/AppIcons/calculator.png", data: JSON.stringify({"width": 300, "height" : 500})}];
   //array of all apps available, their icon and the data which is used to initilize the app
+  applications: {name: string, icon: string, data: string}[] = [{name: "file-explorer", icon: "/assets/AppIcons/file-explorer.png", data: JSON.stringify({})}, {name: "notepad", icon: "/assets/AppIcons/notepad.png", data: JSON.stringify({})}, {name: "calculator", icon: "/assets/AppIcons/calculator.png", data: JSON.stringify({"width": 300, "height" : 500})}];
+  openWithDirectory: {[k: string]: any} = {"txt" : "notepad"}; //tells the os how to open certain files, such as notepad for .txt files
 
   apps: {name: string, windowId: string, data: string}[] = []; //array of all apps open at the moment
-  openWithDirectory: {[k: string]: any} = {"txt" : "notepad"}; //tells the os how to open certain files, such as notepad for .txt files
 
   files: {[k: string]: any} = {"Root/Documents/data.txt": "This is a sample text file", "Root/Documents/file.txt" : "This is the file I just created"} //a dictionary of data files with their paths and their actual data (need to use string for paths as you cant have a path array in a dictionary)
   filePaths: string[][] = [["Root"], ["Root", "Desktop"], ["Root", "Documents"], ["Root", "Documents", "data.txt"], ["Root", "Documents", "file.txt"], ["Root", "Downloads"]];//an array of all files and folders and their paths to access them in file explorer
