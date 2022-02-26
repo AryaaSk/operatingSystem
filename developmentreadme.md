@@ -37,8 +37,11 @@ Add the below code (makes sure the window resizer is always visible) in [appName
 </div>
 ```
 3. Add the app icon in the src/assets/AppIcons folder
-4. Add the app in the applications variable in dataserivce.ts, this should contain the app name, the app icon and the default data needed to start the app
-    - If you are adding your app to open a specific file format, then add the app in the openWithDirectory variable in dataservice.ts, with the app name and extension which it opens (read the Data and File Paths sections to understand better how to read and write data).
+4. Add the app in the applications variable in dataserivce.ts, this should be in the format: 
+```
+{name: "[appName]", icon: "/assets/AppIcons/[imageName].[imageExtension]", data: JSON.stringify({[appData]})}
+```
+    - If you are adding your app to open a specific file format, then add the app in the openWithDirectory variable in dataservice.ts, with the app name and extension which it opens (use notepad example which is already there, and read Data and File Paths section to learn more about this).
 5. In the window.component.html add:
 ```
 <app-[appName] *ngIf="appType=='[appName]'" windowId={{windowId}} data={{data}}></app-[appName]>, and replace [appName] with what your app component name
@@ -53,6 +56,11 @@ Add the below code (makes sure the window resizer is always visible) in [appName
     - apps: A list of all the applications which are currently open, can have multiple instances of the same app.
     - files: A dictionary with all the files/documents stored on device (not including folders).
     - filePaths: A list of all the paths to every file/folder on the OS (to learn more read the File Paths section).
+* When using pre-installed keys such as height, width and resize in your App's Default Data, it will get handled automatically so you don't need to worry about those in your [appName].component.ts. Here is a list of the pre-installed keys:
+    - height: If your app requires a specific height then pass this in the default data.
+    - width: Same as height, pass in an integar and the OS will resize the app to load as this width.
+    - resize: You can pass in 1 of 4 values, "vertical" will only allow the height of the window to be resized, "horizontal" will only allow the width to be resized, or "none" which will not allow either to be resized. If you use the key then all resizing will be enabled by default
+
 (This may change in the future, may forgot to update this so this is what it is on 26/02/2022)
 
 ## File Paths:

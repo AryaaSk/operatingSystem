@@ -28,6 +28,6 @@ export class AppComponent {
 
   ngOnInit()
   {
-    this.dataservice.loadApps();
+    this.dataservice.loadStartupApps();
   }
 }

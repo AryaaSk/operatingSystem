@@ -51,15 +51,17 @@ export class WindowComponent implements OnInit {
   ngAfterViewInit()
   {
     const dataParsed = JSON.parse(this.data) //this has to be in viewAfterInit as it uses document.getElementByID
-    const height = dataParsed["height"]
-    const width = dataParsed["width"]
-    if (height == null && width != null)
-    { document.getElementById(this.windowId)!.style.resize = "horizontal"; }
-    if (height != null && width == null)
-    { document.getElementById(this.windowId)!.style.resize = "vertical"; }
-    if (height != null && width != null)
-    { document.getElementById(this.windowId)!.style.resize = "none"; }
 
+    //check if the OS has specified a resize value for this window
+    if (dataParsed["resize"] != null)
+    {
+      if (dataParsed["resize"] == "vertical")
+      { document.getElementById(this.windowId)!.style.resize = "vertical"; }
+      else if (dataParsed["resize"] == "horizontal")
+      { document.getElementById(this.windowId)!.style.resize = "horizontal"; }
+      else
+      { document.getElementById(this.windowId)!.style.resize = "none"; }
+    }
 
     //also set the index so windows don't stack on top of each other
     //inset = this.dataservice.apps.length * 10; //this doesnt work right now since the apps do not get deleted from the dataservice.apps
