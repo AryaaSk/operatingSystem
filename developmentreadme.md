@@ -7,8 +7,10 @@
 ```
 @Input() windowId: string = "";
 @Input() data: string = "";
+```
 
 Add the below code (makes sure the window resizer is always visible) in [appName].component.html:
+```
 <div class="windowContainer">
     <div class="windowContent">
         <!-- Main HTML goes here -->
@@ -33,4 +35,27 @@ Add the below code (makes sure the window resizer is always visible) in [appName
 4. In the window.component.html add:
 ```
 <app-[appName] *ngIf="appType=='[appName]'" windowId={{windowId}} data={{data}}></app-[appName]>, and replace [appName] with what your app component name
+```
+
+## Data:
+- Data is passed in from the dataService applications variable, this is the data which the app takes to load (height and width will be loaded in the windowComponent), or if you are loading a file it contains the data of that file.
+- After creating a new app component (look above), you will be able to access the app's data by specifying it in the dataService applications variable, or when the user clicks a file from file explorer, and it gets the data from the files variable
+- If you are opening a file, then you will recieve the path to that file as a string[] e.g. ["Root", "Documents", "data.txt"], it is your job to convert that to a string e.g. "Root/Documents/data.txt". You can then use that string to access the file from the dataService files variable, get the data then use it in your app.
+- You should also specify a specific app to open a file extension with since otherwise the OS won't know what to open the file with.
+
+## File Paths:
+- The filePaths variable contains every file path to every folder/file in the system, in the format string[].
+1. When you open a file into an application, you will be given the files data in the form of string[], you can access the current app's data by using:
+```
+const dataParsed = JSON.parse(this.data);
+const filePath = dataParsed["filePath"]; //this will be in form of string[];
+```
+2. Then to convert it to a string use:
+```
+const filePathString = this.dataservice.convertArrayToPath(filePath); //using the convertArrayToPath from dataService, will be in form of string, e.g. "Root/Documents/data.txt".
+```
+3. You can then use this filePathString to read and write data to the dataService files variable, it is just a dictionary, here is an example:
+```
+this.text = this.dataservice.files[filePathString]; //reading the text from a .txt file
+this.dataservice.files[filePathString] = this.text; //saving the text into the file
 ```
