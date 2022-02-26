@@ -16,8 +16,10 @@ Add the below code (makes sure the window resizer is always visible) in [appName
         <!-- Main HTML goes here -->
     </div>
 </div>
+```
 
 (Optional): If you are planning to use a header bar to hold buttons such as "File" or "New" then use this structure instead:
+```
 <div class="windowContainer">
     <div class="windowContent windowOptionsGrid">
         <div>
