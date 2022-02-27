@@ -41,11 +41,12 @@ Add the below code (makes sure the window resizer is always visible) in [appName
 ```
 {name: "[appName]", icon: "/assets/AppIcons/[imageName].[imageExtension]", data: JSON.stringify({[appData]})}
 ```
-    - If you are adding your app to open a specific file format, then add the app in the openWithDirectory variable in dataservice.ts, with the app name and extension which it opens (use notepad example which is already there, and read Data and File Paths section to learn more about this).
+* If you are adding your app to open a specific file format, then add the app in the openWithDirectory variable in dataservice.ts, with the app name and extension which it opens (use notepad example which is already there, and read Data and File Paths section to learn more about this).
 5. In the window.component.html add:
 ```
-<app-[appName] *ngIf="appType=='[appName]'" windowId={{windowId}} data={{data}}></app-[appName]>, and replace [appName] with what your app component name
+<app-[appName] *ngIf="appType=='[appName]'" windowId={{windowId}} data={{data}}></app-[appName]>
 ```
+And replace [appName] with what your app component name
 
 ## Data:
 * Data is passed in from the dataService applications variable, this is the data which the app takes to load/initialize (height and width will be loaded in the windowComponent), or if you are loading a file it contains the data of that file.

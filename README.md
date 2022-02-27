@@ -1,4 +1,7 @@
-Just a project trying to create a basic OS in a webpage, with features like a caluclator, text editor and file system.
+# Operating System
+Note: If you want to contribute or learn more about this, read the Developer Readme: https://github.com/AryaaSk/operatingSystem/blob/master/developmentreadme.md
+
+## Just a project trying to create a basic OS in a webpage, with features like a caluclator, text editor and file system.
 
 Here is the URL: https://operatingsystem.azurewebsites.net
 
