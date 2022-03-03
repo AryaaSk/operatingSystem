@@ -36,6 +36,7 @@ export class NotepadComponent implements OnInit {
     //for now just save to documents by default
     //const path = ["Root", "Desktop", this.newFileName + ".txt"]
     //this.filePath = this.dataservice.convertArrayToPath(path);
+    /*
     const path = prompt("Please input a path to save the file", "Root/Documents/" + this.newFileName + ".txt");
     if (path == null)
     { return }
@@ -60,8 +61,13 @@ export class NotepadComponent implements OnInit {
     this.dataservice.files[this.filePath] = "";
     this.dataservice.filePaths.push(pathArray) //dataservice.filePaths still uses old paths structure
     this.dataservice.saveFiles();
+    */
 
-    this.data = JSON.stringify({"filePath" : pathArray}); //the data needs to be in the array form
+    const filePath = this.dataservice.createFile(this.newFileName, "txt", "");
+    if (filePath == null) //either the user didn't input a valid path
+    { return }
+
+    this.data = JSON.stringify({"filePath" : filePath}); //the data needs to be in the array form
     this.initialize();
   }
 

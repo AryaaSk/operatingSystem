@@ -34,6 +34,44 @@ export class DataService {
     return filePathString
   }
 
+  createFile(fileName: string, fileExtension: string, creationData: any) //used for applications that need to open files, such as notepad. When you first open you will not have a filePath
+  {
+    //fileName is the name of the file
+    //fileExtension is the file's extension, e.g. txt
+    //creationData is the data which the file is created with, e.g. a notepad file is created with data ""
+    
+    //first ask the user where they want to save the file
+    let path = prompt("Please input a path to save the file", "Root/Documents");
+    path = path + "/" + fileName + "." + fileExtension; //not displaying the fileName and fileExtension to the user incase they change it
+    console.log(path)
+    if (path == null)
+    { return null; }
+
+    const pathArray = path!.split("/")
+
+    //need to check if the folder exists
+    var pathArrayCopy = JSON.parse(JSON.stringify(pathArray));
+    pathArrayCopy.pop(); //remove the actual file, and only look for the enclosing folder
+    var contained = false;
+    var i = 0;
+    while (i != this.filePaths.length)
+    {
+      if (String(this.filePaths[i]) == String(pathArrayCopy)) //use String() since javascript is werid about comparing 2 lists
+      { contained = true; } 
+      i += 1; 
+    }
+    if (contained == false)
+    { alert("Directory doesn't exist"); return null; } 
+
+    //need to add the files to the files and filePaths variables
+    const filePath = path!
+    this.files[filePath] = creationData;
+    this.filePaths.push(pathArray) //dataservice.filePaths still uses old paths structure in string[], so we need to use the pathArray
+    this.saveFiles();
+
+    return pathArray; //return in form of string[], to simulate as if it were being opened from file explorer
+  }
+
   saveFiles()
   {
     //everytime the files or filePaths variable is changed we need to save it to local storage
