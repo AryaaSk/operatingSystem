@@ -69,7 +69,7 @@ this.dataservice.files[filePathString] = this.text; //saving the text into the f
 
 * If you are building an application which will allow the user to create new files, then when the user opens the app from the search bar or taskbar, there will not be any file path data
 * You need to check if filePath == undefined, if it is then you need to give the user an option to saveFiles and choose where to save them.
-* Look in notepad.component.ts, in the createFile() function for more information, all it does is saves text data to a path which the user specifies.
+* Look in notepad.component.ts, in the createFile() function for more information, all it does is saves text data to a path which the user specifies.\
 *In the future I might create a createFile(data) function, which will return the path that the data is saved at*
 
 ## Data:
