@@ -11,6 +11,7 @@ import { CalculatorComponent } from './apps/calculator/calculator.component';
 import { FileExplorerComponent } from './apps/file-explorer/file-explorer.component';
 import { SearchComponent } from './components/search/search.component';
 import { Connect4Component } from './apps/connect4/connect4.component';
+import { TaskManagerComponent } from './apps/task-manager/task-manager.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Connect4Component } from './apps/connect4/connect4.component';
     CalculatorComponent,
     FileExplorerComponent,
     SearchComponent,
-    Connect4Component
+    Connect4Component,
+    TaskManagerComponent
   ],
   imports: [
     BrowserModule,

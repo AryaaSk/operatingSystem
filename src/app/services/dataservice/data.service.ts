@@ -5,16 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
+  searchOpen = false;
+
   defaultHeight = 400;
   defaultWidth = 700;
-  searchOpen = false;
 
   //array of all apps available, their icon and the data which is used to initilize the app
   applications: {name: string, icon: string, data: string}[] = [
     {name: "file-explorer", icon: "/assets/AppIcons/file-explorer.png", data: JSON.stringify({})},
     {name: "notepad", icon: "/assets/AppIcons/notepad.png", data: JSON.stringify({})},
     {name: "calculator", icon: "/assets/AppIcons/calculator.png", data: JSON.stringify({"width": 300, "height" : 500, resize: "none"})},
-    {name: "connect4", icon: "/assets/AppIcons/connect4.png", data: JSON.stringify({"width": 600, "height" : 715, resize: "none"})} 
+    {name: "connect4", icon: "/assets/AppIcons/connect4.png", data: JSON.stringify({"width": 600, "height" : 715, resize: "none"})},
+    {name: "taskManager", icon: "/assets/AppIcons/taskManager.png", data: JSON.stringify({})}
 ];
   openWithDirectory: {[k: string]: any} = {"txt" : "notepad"}; //tells the os how to open certain files, such as notepad for .txt files
 
@@ -103,6 +105,7 @@ export class DataService {
 
     //Default Apps
     //this.apps.push({name: "file-explorer", windowId: this.generateID(), data: JSON.stringify({})});
+    this.apps.push({name: "taskManager", windowId: this.generateID(), data: JSON.stringify({})});
   }
 
   generateID()

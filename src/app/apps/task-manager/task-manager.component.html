@@ -1,0 +1,21 @@
+<div class="windowContainer">
+    <div class="windowContent windowOptionsGrid">
+        <div>
+            <input type="button" value="Kill App">
+            <input type="button" value="Reset Position">
+        </div>
+        <div>
+
+            <div class="appRow" style="border-bottom: 1px solid black;">
+                <div class="appNameDiv">App Name</div>
+                <div class="dataDiv" style="background-color: transparent;">Window ID</div>
+            </div>
+        
+            <div class="appRow" *ngFor="let app of this.currentAppsOpen; let i = index;"  (click)="appClicked(i)">
+                <div class="appNameDiv">• {{app.name}}</div>
+                <div class="dataDiv">{{app.windowId}}</div>
+                <div *ngIf="i == this.selectedAppIndex" class="appRowShadow"></div>
+            </div>
+        </div>
+    </div>
+</div>
