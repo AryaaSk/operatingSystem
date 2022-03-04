@@ -68,7 +68,14 @@ this.dataservice.files[filePathString] = this.text; //saving the text into the f
 ```
 
 * If you are building an application which will allow the user to create new files, then when the user opens the app from the search bar or taskbar, there will not be any file path data
-* You need to check if filePath == undefined, if it is then use the dataService.createFile(fileName: string, fileExtension: string, creationData: any)
+* You need to check if filePath == undefined, if it is then use the dataService.createFile(fileName: string, fileExtension: string, creationData: any), below is a code example:
+```
+const newFileName = "File 1"
+this.dataservice.createFile(newFileName, "txt", "");
+```
+This is how you would create a new notepad file, with the creationData as "", you can actually allow the user to do some work, and then just set the creationData to what they have done.
+
+*You can refer to the Notepad app, since it works with data and is very simple you understand these concepts easier*
 
 
 ## Data:

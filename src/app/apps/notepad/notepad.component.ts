@@ -31,11 +31,6 @@ export class NotepadComponent implements OnInit {
   newFileName = "";
   createFile()
   {
-    //NEED TO CHANGE TO NEW FILE SYSTEM
-
-    //for now just save to documents by default
-    //const path = ["Root", "Desktop", this.newFileName + ".txt"]
-    //this.filePath = this.dataservice.convertArrayToPath(path);
     /*
     const path = prompt("Please input a path to save the file", "Root/Documents/" + this.newFileName + ".txt");
     if (path == null)
@@ -63,6 +58,7 @@ export class NotepadComponent implements OnInit {
     this.dataservice.saveFiles();
     */
 
+    //Using dataService.createFile()
     const filePath = this.dataservice.createFile(this.newFileName, "txt", "");
     if (filePath == null) //either the user didn't input a valid path
     { return }
