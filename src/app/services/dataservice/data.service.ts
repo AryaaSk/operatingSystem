@@ -20,8 +20,9 @@ export class DataService {
 
   apps: {name: string, windowId: string, data: string}[] = []; //array of all apps open at the moment
 
-  files: {[k: string]: any} = {"Root/Documents/data.txt": "This is a sample text file", "Root/Documents/file.txt" : "This is the file I just created"} //a dictionary of data files with their paths and their actual data (need to use string for paths as you cant have a path array in a dictionary)
-  filePaths: string[][] = [["Root"], ["Root", "Desktop"], ["Root", "Documents"], ["Root", "Documents", "data.txt"], ["Root", "Documents", "file.txt"], ["Root", "Downloads"]];//an array of all files and folders and their paths to access them in file explorer
+  //both of these are now filled with default data in the loadStartupApps() function
+  files: {[k: string]: any} = {} //a dictionary of data files with their paths and their actual data (need to use string for paths as you cant have a path array in a dictionary)
+  filePaths: string[][] = [];//an array of all files and folders and their paths to access them in file explorer
   //paths are in the format ['...', '...', '...'], instead of .../.../...
 
   convertArrayToPath(path: string[])
@@ -43,7 +44,6 @@ export class DataService {
     //first ask the user where they want to save the file
     let path = prompt("Please input a path to save the file", "Root/Documents");
     path = path + "/" + fileName + "." + fileExtension; //not displaying the fileName and fileExtension to the user incase they change it
-    console.log(path)
     if (path == null)
     { return null; }
 
@@ -75,11 +75,33 @@ export class DataService {
   saveFiles()
   {
     //everytime the files or filePaths variable is changed we need to save it to local storage
+    const filesJSON = JSON.stringify(this.files);
+    const filePathsJSON = JSON.stringify(this.filePaths);
 
+    localStorage.setItem("files", filesJSON);
+    localStorage.setItem("filePaths", filePathsJSON);
   }
   loadStartupApps()
   {
     //can load apps on startup here
+    //From Local Storage:
+    const filesJSON = localStorage.getItem("files")
+    const filePathsJSON = localStorage.getItem("filePaths")
+
+    if (filesJSON == null || filePathsJSON == null)
+    {
+      //give the files and filePaths some default data, since it has never been saved before
+      this.files = {"Root/Documents/data.txt": "This is a sample text file", "Root/Documents/file.txt" : "This is the file I just created"};
+      this.filePaths= [["Root"], ["Root", "Desktop"], ["Root", "Documents"], ["Root", "Documents", "data.txt"], ["Root", "Documents", "file.txt"], ["Root", "Downloads"]];
+      this.saveFiles();
+    }
+    else
+    {
+      this.files = JSON.parse(filesJSON);
+      this.filePaths = JSON.parse(filePathsJSON);
+    }
+
+    //Default Apps
     //this.apps.push({name: "file-explorer", windowId: this.generateID(), data: JSON.stringify({})});
   }
 
