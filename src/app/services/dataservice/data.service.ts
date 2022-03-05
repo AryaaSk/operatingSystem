@@ -105,7 +105,6 @@ export class DataService {
 
     //Default Apps
     //this.apps.push({name: "file-explorer", windowId: this.generateID(), data: JSON.stringify({})});
-    this.apps.push({name: "taskManager", windowId: this.generateID(), data: JSON.stringify({})});
   }
 
   generateID()

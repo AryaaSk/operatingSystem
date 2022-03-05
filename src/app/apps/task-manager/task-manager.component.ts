@@ -31,7 +31,7 @@ export class TaskManagerComponent implements OnInit {
     this.dataService.apps.splice(index, 1);
     this.selectedAppIndex = undefined;
   }
-  resetApp()
+  resetApp() //this can cause some problems if the user has created a file in an app such as notepad, after you reset the app the app's data does not contain the file path, and so the app thinks it has been opened from the search bar or the taskbar.
   {
     if (this.selectedAppIndex == undefined)
     {

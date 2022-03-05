@@ -79,6 +79,7 @@ export class FileExplorerComponent implements OnInit {
       else
       { i += 1; }
     }
+    this.dataservice.saveFiles();
     this.getCurrentData();
   }
   goBack()
