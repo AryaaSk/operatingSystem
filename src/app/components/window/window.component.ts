@@ -19,19 +19,18 @@ export class WindowComponent implements OnInit {
 
   closeWindow()
   {
-    //delete item from dataservice.apps, not working right now but will need to fix in the future
-    /*
+    document.getElementById(this.windowId)!.remove();
+
+    //also delete item from dataservice.apps
     var i = 0;
     while (i != this.dataservice.apps.length)
     {
-      if (this.dataservice.apps[i].windowId = this.windowId)
+      if (this.dataservice.apps[i].windowId == this.windowId)
       { 
-        this.dataservice.apps.splice(i, 1); break 
+        this.dataservice.apps.splice(i, 1); break; 
       }
       i += 1;
-    }*/
-    
-    document.getElementById(this.windowId)!.remove();
+    }
   }
 
   ngOnInit(): void {
