@@ -3,7 +3,7 @@ Note: If you want to contribute or learn more about this, read the Developer Rea
 
 ## Just a project trying to create a basic OS in a webpage, with features like a caluclator, text editor and file system.
 
-Here is the URL: https://operatingsystem.azurewebsites.net
+Here is the URL: https://aryaask.github.io/operatingSystem/
 
 Here is a preview of the project without any apps running:
 ![Image 1](https://github.com/AryaaSk/operatingSystem/blob/master/Previews/Plain.png?raw=true)
