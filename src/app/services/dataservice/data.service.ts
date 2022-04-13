@@ -16,7 +16,8 @@ export class DataService {
     {name: "notepad", icon: "/assets/AppIcons/notepad.png", data: JSON.stringify({})},
     {name: "calculator", icon: "/assets/AppIcons/calculator.png", data: JSON.stringify({"width": 300, "height" : 500, resize: "none"})},
     {name: "connect4", icon: "/assets/AppIcons/connect4.png", data: JSON.stringify({"width": 600, "height" : 715, resize: "none"})},
-    {name: "taskManager", icon: "/assets/AppIcons/taskManager.png", data: JSON.stringify({})}
+    {name: "taskManager", icon: "/assets/AppIcons/taskManager.png", data: JSON.stringify({})},
+    {name: "chess", icon: "/assets/AppIcons/chess.png", data: JSON.stringify({height: 500})}
 ];
   openWithDirectory: {[k: string]: any} = {"txt" : "notepad"}; //tells the os how to open certain files, such as notepad for .txt files
 

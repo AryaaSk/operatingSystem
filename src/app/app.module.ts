@@ -12,6 +12,7 @@ import { FileExplorerComponent } from './apps/file-explorer/file-explorer.compon
 import { SearchComponent } from './components/search/search.component';
 import { Connect4Component } from './apps/connect4/connect4.component';
 import { TaskManagerComponent } from './apps/task-manager/task-manager.component';
+import { ChessComponent } from './apps/chess/chess.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TaskManagerComponent } from './apps/task-manager/task-manager.component
     FileExplorerComponent,
     SearchComponent,
     Connect4Component,
-    TaskManagerComponent
+    TaskManagerComponent,
+    ChessComponent
   ],
   imports: [
     BrowserModule,

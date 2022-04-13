@@ -1,0 +1,13 @@
+<div class="windowContainer">
+    <div class="windowContent windowOptionsGrid">
+        <div>
+            <input type="button" value="Toggle Theme" (click)="toggleTheme()">
+            <input type="button" value="Toggle 2D Outlines" (click)="toggle2DOutlines()">
+            <input type="button" value="Reset Game" (click)="reloadGameURL()">
+        </div>
+        <div>
+            <!-- Just embedding my 3DChess game from here: https://github.com/AryaaSk/3DChess -->
+            <iframe  class="chessView" id="chessView" src="https://aryaask.github.io/3DChess/index.html"></iframe>
+        </div>
+    </div>
+</div>
